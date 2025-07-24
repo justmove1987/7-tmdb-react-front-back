@@ -5,13 +5,13 @@ const TMDB_API_KEY = process.env.TMDB_API_KEY;
 async function getPopularMovies(req, res) {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${TMDB_API_KEY}&language=es-ES&page=1`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}&language=es-ES&page=1`
     );
-
+    console.log(response.data);
     const movies = await Promise.all(
       response.data.results.map(async (movie) => {
         const creditsRes = await axios.get(
-          `https://api.themoviedb.org/3/movie/${movie.id}/credits?api_key=${TMDB_API_KEY}`
+          `https://api.themoviedb.org/3/movie/${movie.id}/credits?api_key=${process.env.TMDB_API_KEY}`
         );
 
         const director = creditsRes.data.crew.find((p) => p.job === "Director")?.name || "Desconegut";

@@ -1,16 +1,14 @@
-// src/App.tsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MovieList from "./pages/MovieList";
+import Home from "./pages/MovieList";
 
-const App = () => {
+function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<MovieList />} />
-        {/* Aquí pots afegir més rutes com /movie/:id més endavant */}
+        <Route path="/" element={<Home />} />
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;
