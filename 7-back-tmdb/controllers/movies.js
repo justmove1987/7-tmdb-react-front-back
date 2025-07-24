@@ -1,4 +1,3 @@
-// backend/controllers/movies.js
 const axios = require("axios");
 
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
@@ -11,12 +10,12 @@ async function getPopularMovies(req, res) {
 
     const movies = await Promise.all(
       response.data.results.map(async (movie) => {
-        const credits = await axios.get(
+        const creditsRes = await axios.get(
           `https://api.themoviedb.org/3/movie/${movie.id}/credits?api_key=${TMDB_API_KEY}`
         );
 
-        const director = credits.data.crew.find((p) => p.job === "Director")?.name || "Desconegut";
-        const actors = credits.data.cast.slice(0, 3).map((actor) => actor.name); // Primeres 3
+        const director = creditsRes.data.crew.find((p) => p.job === "Director")?.name || "Desconegut";
+        const actors = creditsRes.data.cast.slice(0, 3).map((a) => a.name);
 
         return {
           id: movie.id,
@@ -29,8 +28,9 @@ async function getPopularMovies(req, res) {
     );
 
     res.json(movies);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ error: "Error carregant les pel·lícules." });
   }
 }
 
