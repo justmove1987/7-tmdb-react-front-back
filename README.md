@@ -58,11 +58,55 @@ tmdb-movie-explorer/
 git clone https://github.com/justmove1987/7-tmdb-react-front-back.git
 cd 7-tmdb-react-front-back
 ```
-🔒 Auth Guard
+
+
+### 2. Setup the backend
+bash
+```bash
+cd 7-back-tmdb
+npm install
+Create a .env file:
+```
+env
+```bash
+TMDB_API_KEY=your_tmdb_api_key_here
+```
+Start the backend:
+
+bash
+```bash
+npm run dev
+Runs on: http://localhost:5000
+```
+### 3. Setup the frontend
+bash
+```bash
+cd ../7-front-tmdb
+npm install
+Create a .env file in 7-front-tmdb:
+```
+env
+```bash
+VITE_FIREBASE_API_KEY=your_firebase_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+Start the frontend:
+
+bash
+```bash
+npm run dev
+Runs on: http://localhost:5173
+```
+
+
+
+## 🔒 Auth Guard
 Only registered users can access the movie list and details.
 Unauthenticated users are redirected to the login page and sent back after successful login.
 
-📦 Tech Stack
+## 📦 Tech Stack
 Frontend: React, TypeScript, Tailwind CSS, React Router, Firebase Auth
 
 Backend: Express, Axios, Dotenv
