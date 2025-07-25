@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import WelcomePage from "./pages/WelcomePage";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Login from "./pages/Login.tsx";
+import Register from "./pages/Register.tsx";
 import Home from "./pages/MovieList";
 import MovieDetail from "./pages/MovieDetail";  // 👈 Importem el detall
 import RequireAuth from "./components/RequireAuth";
