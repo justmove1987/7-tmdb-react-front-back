@@ -1,69 +1,72 @@
-# React + TypeScript + Vite
+# 🎬 TMDB Movie Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack movie catalog app built with **React**, **TypeScript**, **Firebase Authentication**, and **Express**, using data from **The Movie Database (TMDB)** API.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔐 Protected routes with Firebase Authentication (Login/Register)
+- 🎞️ List of popular movies from TMDB
+- 🧑‍💼 Movie details page with title, director, and main actors
+- 📦 Backend with Express for handling API calls to TMDB
+- ⚛️ State management with React Context
+- 🎨 Styled with Tailwind CSS
+- 🔄 Routing with React Router v6
+- 🔍 Search functionality (case-insensitive)
+- 📁 Clean folder structure and reusable components
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📁 Project Structure
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+tmdb-movie-explorer/
+├── 7-back-tmdb/ # Backend with Express and TMDB API
+│ ├── controllers/
+│ ├── .env
+│ ├── index.js
+│ └── ...
+├── 7-front-tmdb/ # Frontend with Vite + React + TypeScript
+│ ├── src/
+│ │ ├── assets/
+│ │ ├── components/
+│ │ ├── context/
+│ │ ├── hooks/
+│ │ ├── pages/
+│ │ ├── types/
+│ │ ├── utils/
+│ │ └── App.tsx
+│ ├── .env
+│ └── ...
 ```
+
+---
+
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+
+- Node.js (v18+ recommended)
+- Firebase project (with Email/Password auth enabled)
+- TMDB account and API key
+
+---
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/justmove1987/7-tmdb-react-front-back.git
+cd 7-tmdb-react-front-back
+```
+🔒 Auth Guard
+Only registered users can access the movie list and details.
+Unauthenticated users are redirected to the login page and sent back after successful login.
+
+📦 Tech Stack
+Frontend: React, TypeScript, Tailwind CSS, React Router, Firebase Auth
+
+Backend: Express, Axios, Dotenv
+
+API: TMDB (The Movie Database)
+
+

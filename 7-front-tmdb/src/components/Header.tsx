@@ -15,10 +15,10 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-black text-white p-4 flex justify-between items-center shadow-md">
+    <header className="bg-gray-800 text-white p-4 flex justify-between items-center shadow-md">
       <Link to="/movies" className="flex items-center gap-2">
-        <img src={logo} alt="Logo" className="w-10 h-10" />
-        <h1 className="text-xl font-bold hidden sm:block">Cartellera</h1>
+        <img src={logo} alt="Logo" className="w-34 h-14" />
+       
       </Link>
 
       <nav className="flex gap-4 items-center">
